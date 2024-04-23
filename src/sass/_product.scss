@@ -1,0 +1,11 @@
+.card{
+    border: none;
+    .card-body{
+      text-align: center;
+    }
+
+    .details{
+    @include flex();
+    }
+
+}

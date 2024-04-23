@@ -1,0 +1,30 @@
+header{
+    height: 80px;
+   
+    .container{
+        height: 70px;
+        @include flex();
+
+        nav{
+              width: 30%;
+              height: 30px;
+            ul{
+                @include flex();
+
+                    li{
+                    @include style();
+                }
+            }
+        }
+
+
+        .login{
+            width: 30%;
+            @include flex();
+
+            a{
+                @include style();
+            }
+        }
+    }
+}

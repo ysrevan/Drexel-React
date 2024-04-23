@@ -1,0 +1,29 @@
+footer{
+
+    .container{
+        width: 90%;
+
+        nav{
+            @include flex();
+            ul{
+                @include flex();
+                width: 50%;
+
+                li{
+                    @include style();
+
+                    a{
+                         @include style();
+
+                    }
+                }
+            }
+
+            .icon{
+                width: 10%;
+                @include flex();
+            }
+        }
+    }
+
+}

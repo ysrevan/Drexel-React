@@ -1,0 +1,17 @@
+.carousel-text{
+    @include carouselposition();
+
+    button{
+        @include carouselbutton();
+    }
+}
+.carousel-text1{
+    position: absolute;
+    top: 330px;
+    left: 350px;
+    text-align: center;
+    
+    button{
+        @include carouselbutton();
+    }
+}
