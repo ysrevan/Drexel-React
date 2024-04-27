@@ -1,7 +1,10 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { BsCart2 } from "react-icons/bs";
+import { useCart } from 'react-use-cart';
 
 const Header = () => {
+  const {totalItems} = useCart();
   return (
       <header>
           <div className='container'>
@@ -22,6 +25,12 @@ const Header = () => {
             <i class="fa-regular fa-heart"></i>
             <a href="#">CART</a>
             <i class="fa-solid fa-magnifying-glass"></i>
+            <Link to="/cart" style={{position:"relative"}}>
+        <BsCart2 />
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {totalItems}
+        </span>
+           </Link>
            </div>
         </div>
       </header>

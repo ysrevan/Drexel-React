@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductDetails from './pages/ProductDetails';
 import BlogDetails from './pages/BlogDetails';
+import Cart from './pages/Cart';
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/blog/:slug' element={<BlogDetails/>}></Route>
         <Route path='/pages' element={<Pages/>}></Route>
         <Route path='/shop/:slug' element={<ProductDetails/>}></Route>
+        <Route path='/cart' element={<Cart/>}></Route>
         <Route path='*' element={<NotFoundPage/>}></Route>
     </Routes>
     <Footer />

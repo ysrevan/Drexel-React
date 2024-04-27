@@ -6,16 +6,13 @@ import { ProductContext } from '../context/ProductContext'
 
 const Shop = () => {
   const [product] = useContext(ProductContext);
-  const [category,setCategory] = useState([]);
   const [filterData,setFilterData] = useState([]);
-  useEffect(()=>{
-    axios.get('http://127.0.0.1:5501/src/data/category.json')
-    .then(res=>setCategory(res.data))
-  },[]) 
+  const [active,setActive] = useState("")
 
-  const filterProduct =(cat)=>{
-    const result = product.filter(p=>p.category === cat)
-    setFilterData(result);
+  const filterProduct = (cat) =>{
+    const result = product.filter(p => p.category === cat)
+    setFilterData(result)
+    setActive(cat)
   }
 
   return (
@@ -24,28 +21,22 @@ const Shop = () => {
      <LeftCard />
     <div className="row">
     <img src="https://demo.lion-themes.net/drexel/wp-content/uploads/2017/06/banner-categori.jpg" alt="" />
-   
-  
-      <div className="col-12 col-sm-6 col-md-4">
-      <ul className="list-group mt-5">
-   {category.map(item=>(
-     <li key={item.id} className="list-group-item" onClick={()=>{filterProduct(item.category)}}>{item.category}</li>
-    ))}
-  </ul>
-      </div>
 
+  <ul className="list-group mt-5">
+  <li  onClick={()=>{filterProduct('pillow')}} className={`list-group-item ${active===('pillow')?"active":""}`}><a href="#">PILLOW</a></li>
+  <li  onClick={()=>{filterProduct('broom')}} className={`list-group-item ${active===('broom')?"active":""}`}><a href="#">BROOM</a></li>
+  <li  onClick={()=>{filterProduct('candle')}} className={`list-group-item ${active===('candle')?"active":""}`}><a href="#">CANDLE</a></li>
+  <li  onClick={()=>{filterProduct('clock')}} className={`list-group-item ${active===('clock')?"active":""}`}><a href="#">CLOCK</a></li>
+  <li  onClick={()=>{filterProduct('thing')}} className={`list-group-item ${active===('thing')?"active":""}`}><a href="#">THING</a></li>
+</ul>
 
-  
-   
-    {filterData.length===0?product.map(item=>(
-         <Product alldata={item} key={item.id}/>
-     )):filterData.map(item=>(
-      <Product alldata={item} key={item.id}/>
-  ))}
+ {filterData.length === 0 ? product.map(item => (
+                       <Product alldata={item} key={item.id}/>
+                    )) : filterData.map(item => (
+                      <Product alldata={item} key={item.id}/>))}
+
     </div>
      </div>
-   
-   
   )
 }
 

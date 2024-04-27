@@ -25,6 +25,10 @@ header{
             a{
                 @include style();
             }
+
+            svg{
+                font-size: 20px;
+            }
         }
     }
 }

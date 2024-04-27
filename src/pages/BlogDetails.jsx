@@ -20,7 +20,6 @@ const BlogDetails = () => {
     <p className="lead">{blogDetails.text}</p>
     <div className="d-grid gap-2 d-md-flex justify-content-md-start">
       <Link to="/blog"><button className='back'>Back</button></Link>
-      <button type="button" className="btn btn-dark btn-lg px-4">Add to Cart</button>
     </div>
   </div>
 </div>

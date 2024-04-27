@@ -6,12 +6,15 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js'
 import './sass/style.scss'
 import { ProductProvider } from './context/ProductContext.jsx'
 import { BlogProvider } from './context/BlogContext.jsx';
+import { CartProvider } from 'react-use-cart';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BlogProvider>
    <ProductProvider>
+    <CartProvider>
    <App />
+   </CartProvider>
    </ProductProvider>
    </BlogProvider>
   </React.StrictMode>,
