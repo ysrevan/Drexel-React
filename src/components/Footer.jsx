@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LangContext } from '../context/LangContext';
 
 const Footer = () => {
+  const [lang] = useContext(LangContext);
   return (
  <footer className="py-5 mt-5">
   <div className="container">
   <div className="row">
     <div className="col-6 col-md-3 mb-3">
-      <h5>ABOUT</h5>
+      <h5>{lang==="AZ"?"HAQQIMIZDA":"ABOUT"}</h5>
       <ul className="nav flex-column">
-        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">News & Stories</a></li>
-        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">History</a></li>
-        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Our Studio</a></li>
-        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Showrooms</a></li>
+        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="AZ"?"Yenilər və hekayələr":"New & Stories"}</a></li>
+        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="AZ"?"Tarix":"History"}</a></li>
+        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="AZ"?"Bizim Studiya":"Our Studio"}</a></li>
+        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="AZ"?"Sərgi salonları":"Showrooms"}</a></li>
         <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Stockists</a></li>
       </ul>
     </div>

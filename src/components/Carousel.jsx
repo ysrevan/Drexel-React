@@ -1,6 +1,5 @@
-import React from 'react'
-
 const Carousel = () => {
+  
   return (
     <div className='container mt-5'>
      <div id="carouselExample" className="carousel slide">
@@ -40,7 +39,6 @@ const Carousel = () => {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
-
     </div>
   )
 }
