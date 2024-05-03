@@ -29,7 +29,7 @@ const Header = () => {
         <img src="https://demo.lion-themes.net/drexel/wp-content/uploads/2017/06/logo.png" alt="" />
 
         <div className="login">
-          <Link id='header' to="/login">{lang==="AZ"?"QEYDİYYATDAN KEÇ":"LOGIN OR REGISTER"}</Link>
+          <Link id='header' to="/login">{lang==="AZ"?"GİRİŞ YOXSA QEYDİYYAT":"LOGIN OR REGISTER"}</Link>
           <i class="fa-regular fa-heart"></i>
           <a href="#">CART</a>
           <div>
