@@ -1,12 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 
 
-export const ThemeContext = createContext(localStorage.getItem('theme'));
+export const ThemeContext = createContext();
 export const ThemeProvider =({children})=>{
-    const [theme,setTheme] = useState("light")
+    const [theme,setTheme] = useState(localStorage.getItem('theme'))
     useEffect(()=>{
-        if (localStorage.getItem('light')===null) {
-            localStorage.setItem('dark',"dark")
+        if (localStorage.getItem('theme')===null) {
+            localStorage.setItem('theme',"dark")
         }
     },[])
     return(

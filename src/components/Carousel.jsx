@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { LangContext } from "../context/LangContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Carousel = () => {
   const [lang] = useContext(LangContext);
+  const [theme] = useContext(ThemeContext)
   return (
-    <div className='container mt-5'>
+   <body className={`${theme === "dark" ? "dark":""}`}>
+     <div className='container mt-5'>
      <div id="carouselExample" className="carousel slide">
   <div className="carousel-inner">
     <div className="carousel-item active">
@@ -43,6 +46,7 @@ const Carousel = () => {
   </button>
 </div>
     </div>
+    </body>
   )
 }
 

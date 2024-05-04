@@ -1,10 +1,12 @@
 import React, { useContext } from 'react'
 import { LangContext } from '../context/LangContext';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Footer = () => {
   const [lang] = useContext(LangContext);
+  const [theme] = useContext(ThemeContext)
   return (
- <footer className="py-5 mt-5">
+ <footer className={`py-5 mt-5 ${theme === "dark" ? "dark":""}`}>
   <div className="container">
   <div className="row">
     <div className="col-6 col-md-3 mb-3">

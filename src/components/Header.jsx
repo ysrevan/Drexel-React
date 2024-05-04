@@ -14,7 +14,7 @@ const Header = () => {
   const [lang,setLang] = useContext(LangContext);
   const [theme,setTheme] = useContext(ThemeContext);
   return (
-    <header>
+    <header className={`${theme === "dark" ? "dark":""}`}>
       <div className='container'>
         <nav>
           <ul>
@@ -26,12 +26,12 @@ const Header = () => {
         </nav>
 
 
-        <img src="https://demo.lion-themes.net/drexel/wp-content/uploads/2017/06/logo.png" alt="" />
+        <img className='drexel' src="https://demo.lion-themes.net/drexel/wp-content/uploads/2017/06/logo.png" alt="" />
 
         <div className="login">
-          <Link id='header' to="/login">{lang==="AZ"?"GİRİŞ YOXSA QEYDİYYAT":"LOGIN OR REGISTER"}</Link>
-          <i class="fa-regular fa-heart"></i>
-          <a href="#">CART</a>
+          <Link className='register' id='header' to="/login">{lang==="AZ"?"GİRİŞ YOXSA QEYDİYYAT":"LOGIN OR REGISTER"}</Link>
+          <i className="fa-regular fa-heart"></i>
+          <a href="#" className='cart'>CART</a>
           <div>
             {/* Button trigger modal */}
             <button type="button" className="btn btn-primary search" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="fa-solid fa-magnifying-glass" /></button>
@@ -66,7 +66,7 @@ const Header = () => {
 
 
           <Link to="/cart" style={{ position: "relative" }}>
-            <BsCart2 />
+            <BsCart2  className='basket'/>
             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               {totalItems}
             </span>

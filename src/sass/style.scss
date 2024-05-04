@@ -1,3 +1,12 @@
+body{
+    .dark{
+        background-color: #000;
+        color: #fff !important
+    }
+}
+
+
+
 @import 'mixin';
 @import 'header';
 @import 'carousel';
@@ -6,4 +15,5 @@
 @import 'shop';
 @import 'product';
 @import 'contact';
-@import 'productdetails'
+@import 'productdetails';
+@import 'leftpiece'
